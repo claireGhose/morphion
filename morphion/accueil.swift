@@ -10,6 +10,7 @@ import SwiftUI
 
 struct accueil: View {
     var body: some View {
+        NavigationView {
      
       ZStack {
         Image("plage")
@@ -29,6 +30,8 @@ struct accueil: View {
             
             Spacer()
             HStack {
+                
+                NavigationLink(destination: ContentView()){
                 Text ("   1 PLAYER   ")
                     .font(.largeTitle)
                     .fontWeight(.heavy)
@@ -36,10 +39,12 @@ struct accueil: View {
                     .background(Color.white)
                     .cornerRadius(30)
                     .opacity(0.85)
+                }
             }
             Spacer()
-            
             HStack {
+                
+                NavigationLink(destination: jouerAvecOrdi()){
                 Text ("   2 PLAYERS   ")
                     .font(.largeTitle)
                     .fontWeight(.heavy)
@@ -47,14 +52,18 @@ struct accueil: View {
                     .background(Color.white)
                     .cornerRadius(30)
                     .opacity(0.85)
+                }
             }
             
            
+           Spacer()
+           Spacer()
             Spacer()
         } // VStack
         
-        
+            
         } // ZStack
+        } .navigationBarTitle("accueil")
     } //accueil view
 } // body View
 
